@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.xustars.myblog.dao.BlogTypeMapper" >
+
+  
+  <select id="queryList" resultType="cn.xustars.myblog.entity.BlogType">
+  		select * from blog_type where 1 = 1 order by order_no
+	    <if test="offset != null and limit != null">
+		  	limit #{offset}, #{limit}
+	    </if>
+  </select>
+
+  <select id="queryTotal" resultType="int">
+		select count(*) from blog_type
+  </select>
+
+  <insert id="insert" parameterType="cn.xustars.myblog.entity.BlogType">
+  		insert into blog_type values(null,#{typeName},#{orderNo},#{state})
+  </insert>
+  
+  <update id="updateById" parameterType="cn.xustars.myblog.entity.BlogType">
+  		update blog_type 
+ 		<trim prefix="SET" suffixOverrides=",">
+			<if test="typeName != null">title = #{typeName}, </if>
+			<if test="orderNo != null">com_time = #{orderNo}, </if>
+			<if test="state != null">state = #{state}, </if>
+	    </trim>
+	    where type_id = #{typeId}
+  </update>
+  
+  <delete id="deleteBatch">
+		delete from blog_type where type_id in
+		<foreach item="typeId" collection="array" open="(" separator="," close=")">
+			#{typeId}
+		</foreach>
+  </delete>
+</mapper>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.xustars.myblog.dao.BlogLinkMapper" >
+  
+  <select id="queryList" resultType="cn.xustars.myblog.entity.BlogLink">
+  		select * from blog_link where 1 = 1
+	    <if test="offset != null and limit != null">
+		  	limit #{offset}, #{limit}
+	    </if>
+  </select>
+
+  <select id="queryTotal" resultType="int">
+		select count(*) from blog_link
+  </select>
+
+  <insert id="insert" parameterType="cn.xustars.myblog.entity.BlogLink">
+  		insert into blog_link values(null,#{linkUrl},#{linkTitle},#{state})
+  </insert>
+  
+  <update id="updateById" parameterType="cn.xustars.myblog.entity.BlogLink">
+  		update blog_link 
+ 		<trim prefix="SET" suffixOverrides=",">
+			<if test="linkUrl != null">link_url = #{linkUrl}, </if>
+			<if test="linkTitle != null">link_title = #{linkTitle}, </if>
+			<if test="state != null">state = #{state}, </if>
+	    </trim>
+	    where link_id = #{link_id}
+  </update>
+  
+  <delete id="deleteBatch">
+		delete from blog_link where link_id in
+		<foreach item="linkId" collection="array" open="(" separator="," close=")">
+			#{comId}
+		</foreach>
+  </delete>
+</mapper>

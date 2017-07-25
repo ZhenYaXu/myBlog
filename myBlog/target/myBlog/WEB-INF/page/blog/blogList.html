@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>blog</title>
+    #parse("sys/header.html")
+    <link rel="stylesheet" href="${rc.contextPath}/statics/css/bootstrap.css"/>
+    <link rel="stylesheet" href="${rc.contextPath}/statics/css/bootstrap-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="${rc.contextPath}/statics/css/summernote.css" />
+    <link rel="stylesheet" type="text/css" href="${rc.contextPath}/statics/css/summernote-bs2.css" />
+    <link rel="stylesheet" type="text/css" href="${rc.contextPath}/statics/css/summernote-bs3.css" />
+
+    <style type="text/css">
+
+        .table th,
+        .table td {
+            text-align: center;
+            vertical-align: middle !important;
+            border-top: 0px;
+        }
+
+        #caseRegister label {
+            width: 110px;
+            text-align: right;
+        }
+
+        #searchInput label {
+            width: 100px;
+        }
+
+        #searchInput input {
+            width: 55%;
+        }
+
+        #caseRegister input {
+            width: 180px;
+        }
+
+        .btnGroupContainer {
+            width: 229px;
+            margin: 0 auto;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+<div id="myblog" v-cloak>
+
+    <div>
+        <div v-show="showList">
+            <h3 class="">blog列表</h3>
+            <div id="searchInput" class="form-group">
+                <form action="" method="post">
+                    <table class="table" style="border: 0 solid transparent;">
+                        <tbody>
+                        <tr>
+                            <td><label>博客标题:</label><input type="text" name="caseCode"></td>
+                            <td><label>博客类型:</label><input type="text" name="wpmc"></td>
+                            <td></label><input type="reset" style="width: 80px;" class="btn btn-default" value="重置"/></td>
+                            <td><input type="submit" style="width: 80px;" name="" class="btn btn-primary" value="查询"/></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
+                <!-- 隐藏标签存储数据 -->
+                <input type="hidden" id="blogId" value="">
+            </div>
+
+            <div class="grid-btn">
+                <a class="btn btn-primary" @click="update"><i class="fa fa-pencil-square-o"></i>&nbsp;修改</a>
+                <a class="btn btn-primary" @click=""><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+            </div>
+
+            <table id="jqGrid"></table>
+            <div id="jqGridPager"></div>
+
+        </div>
+    </div>
+
+    <div v-show="!showList" class="container">
+        <h3 class="">编辑blog</h3>
+        <div class="container">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <div class="col-md-2 control-label">博客标题</div>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" v-model="blog.title" placeholder="博客标题"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-2 control-label">博客摘要</div>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" v-model="blog.summary" placeholder="博客摘要"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-2 control-label">博客类型</div>
+                    <div class="col-md-10 dropdown">
+                        <select class="form-control" v-model="blog.typeId">
+                            <option value="1">原创</option>
+                            <option value="2">转载</option>
+                            <option value="3">翻译</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-2 control-label">博客内容</div>
+                    <div class="col-md-10">
+                        <div id="summernote">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-4 control-label"></div>
+                    <input type="button" style="margin-top: 50px" class="btn btn-primary" @click="save" value="发表"/>
+                    <input type="button" style="margin-top: 50px;margin-left: 100px" class="btn btn-warning" @click="reload" value="返回"/>
+                </div>
+
+
+            </form>
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="${rc.contextPath}/statics/libs/summernote.js"></script>
+<script type="text/javascript" src="${rc.contextPath}/statics/plugins/summernote/lang/summernote-zh-CN.js"></script>
+<script src="${rc.contextPath}/js/blog/blogList.js?_${date.systemTime}"></script>
+</body>
+</html>

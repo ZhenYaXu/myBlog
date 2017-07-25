@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>编辑博客</title>
+    #parse("sys/header.html")
+    <link rel="stylesheet" type="text/css" href="${rc.contextPath}/statics/css/summernote.css" />
+    <link rel="stylesheet" type="text/css" href="${rc.contextPath}/statics/css/summernote-bs2.css" />
+    <link rel="stylesheet" type="text/css" href="${rc.contextPath}/statics/css/summernote-bs3.css" />
+
+
+</head>
+<body>
+<div id="" v-cloak>
+
+    <div class="container">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <div class="col-md-2 control-label">博客标题</div>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" v-model="blog.title"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-2 control-label">博客摘要</div>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" v-model="blog.summary"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-2 control-label">博客类型</div>
+                <div class="col-md-10 dropdown">
+                    <form role="form">
+                        <div class="form-group">
+                            <select class="form-control" v-model="blog.type_id">
+                                <option value="1">原创</option>
+                                <option value="2">转载</option>
+                                <option value="3">翻译</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-lg-2 control-label">博客内容</div>
+                <div class="col-lg-10">
+                    <div id="summernote">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-2 control-label"></div>
+                <input type="button" class="btn btn-primary" @click="save" value="发表"/>
+                &nbsp;&nbsp;<input type="button" class="btn btn-warning" @click="reload" value="返回"/>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+</div>
+</div>
+</body>
+
+<script type="text/javascript" src="${rc.contextPath}/statics/libs/summernote.js"></script>
+<script type="text/javascript" src="${rc.contextPath}/statics/plugins/summernote/lang/summernote-zh-CN.js"></script>
+<script type="text/javascript" src="${rc.contextPath}/js/blog/updateBlog.js"></script>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>blog</title>
+  <link rel="shortcut icon" href="admin/statics/images/jh.ico" type="image/x-icon"/>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="admin/statics/css/bootstrap.min.css">
+  <link rel="stylesheet" href="admin/statics/css/font-awesome.min.css">
+  <link rel="stylesheet" href="admin/statics/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="admin/statics/css/all-skins.min.css">
+  <link rel="stylesheet" href="admin/statics/css/main.css">
+  
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper" id="rrapp" v-cloak>
+<header class="main-header" style="height:90px; background:url(admin/statics/images/indexImages/logo-bg.jpg) repeat">
+
+      <img style="height:90px; position:absolute; " src="" />
+   
+  	  
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav" style="margin-top:25px;">  
+          <li style="width:79px;height:50px;margin-right:20px;margin-top:15px;color: #3c8dbc; ">  &nbsp;欢迎 {{user.accountCode}}  </li>
+          <li><a href="/portal" ><i class="fa fa-home"></i> &nbsp;Blog主页</a></li>
+		  <li><a href="javascript:;" @click="updatePassword"><i class="fa fa-lock"></i> &nbsp;修改密码</a></li>
+          <li><a href="logout"><i class="fa fa-sign-out"></i> &nbsp;退出系统</a></li>
+		</ul>
+      </div>
+ 
+  </header>
+
+  <!-- =============================================== -->
+
+  <!-- Left side column. contains the sidebar -->
+  <aside class="main-sidebar" style="margin-top:50px;">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- /.search form -->
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu">
+        <li class="header">导航菜单</li>
+       
+        <!-- vue生成的菜单 -->
+		<menu-item :item="item" v-for="item in menuList"></menu-item>
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+  <!-- =============================================== -->
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+   
+   
+
+    <!-- Main content -->
+    <section class="content" style="background:#fff;">
+      <iframe scrolling="yes" frameborder="0" style="width:100%;min-height:200px;overflow:visible;background:#fff;" :src="main"></iframe>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+  
+  <!-- 修改密码 -->
+<div id="passwordLayer" style="display: none;">
+	<form class="form-horizontal">
+	<div class="form-group">
+		<div class="form-group">
+		   	<div class="col-sm-2 control-label">账号</div>
+		    <span class="label label-success" style="vertical-align: bottom;">{{user.accountCode}}</span>
+		</div>
+		<div class="form-group">
+		   	<div class="col-sm-2 control-label">原密码</div>
+		   	<div class="col-sm-10">
+		      <input type="password" class="form-control" v-model="password" placeholder="原密码"/>
+		    </div>
+		</div>
+		<div class="form-group">
+		   	<div class="col-sm-2 control-label">新密码</div>
+		   	<div class="col-sm-10">
+		      <input type="text" class="form-control" v-model="newPassword" placeholder="新密码"/>
+		    </div>
+		</div>
+	</div>
+	</form>
+</div>
+
+</div>
+<!-- ./wrapper -->
+
+<script type="text/javascript">
+	window.onload=function(){
+		$("#myToggle").click();
+	}
+</script>
+
+<script src="admin/statics/libs/jquery.min.js"></script>
+<script src="admin/statics/libs/vue.min.js"></script>
+<script src="admin/statics/libs/router.js"></script>
+<script src="admin/statics/libs/bootstrap.min.js"></script>
+<script src="admin/statics/libs/jquery.slimscroll.min.js"></script>
+<script src="admin/statics/libs/fastclick.min.js"></script>
+<script src="admin/statics/libs/app.js"></script>
+<script src="admin/statics/plugins/layer/layer.js"></script>
+<script src="admin/js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>blog</title>
+    #parse("sys/header.html")
+    <link rel="stylesheet" href="${rc.contextPath}/statics/css/bootstrap.css" />
+    <link rel="stylesheet" href="${rc.contextPath}/statics/css/bootstrap-theme.css" />
+
+    <style type="text/css">
+
+        .table th,
+        .table td {
+            text-align: center;
+            vertical-align: middle!important;
+            border-top: 0px;
+        }
+
+        #caseRegister label {
+            width: 110px;
+            text-align: right;
+        }
+        #searchInput label{
+            width: 100px;
+        }
+        #searchInput input{
+            width: 55%;
+        }
+
+        #caseRegister input {
+            width: 180px;
+        }
+        .btnGroupContainer{
+            width: 229px; margin: 0 auto;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+<div class="">
+    <h2 class="">评论列表</h2>
+</div>
+<div id="searchInput" class="form-group">
+    <form action="" method="post">
+        <table class="table" style="border: 0 solid transparent;">
+            <tbody>
+            <tr>
+                <td><label>评论标题:</label><input type="text" name="caseCode"></td>
+                <td><label>评论类型:</label><input  type="text" name="wpmc"></td>
+
+            </tr>
+            <tr>
+                <td>
+                    </label><input  type="reset" style="width: 80px;"class="btn btn-default"  value="重置" />
+                </td>
+
+                <td><input type="submit" style="width: 80px;" name="" class="btn btn-primary" value="查询" /></td>
+            </tr>
+            </tbody>
+        </table>
+
+    </form>
+    <!-- 隐藏标签存储数据 -->
+    <input type="hidden" id="hidcasecode" value="">
+
+</div>
+
+<div id="tableInfo" class="table-responsive">
+
+</div>
+
+
+<div id="myblog" v-cloak>
+    <div v-show="showList">
+
+        <table id="jqGrid"></table>
+        <div id="jqGridPager"></div>
+
+    </div>
+</div>
+
+<script src="${rc.contextPath}/js/blog/commentList.js?_${date.systemTime}"></script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+@CHARSET "UTF-8";
+.active .wp-icon
+{
+	background: rgb(26, 79, 145)!important;
+}
+
+.wp-icon
+{
+    margin: 0px auto;
+    text-align: center;
+	border:1px #90ACCE dashed;
+	background:rgb(194,218,247);
+	
+}
+
+.wp-icon span
+{
+    height: 50px;
+    width:100px;
+    margin: 0 auto;
+    display: block;
+}
+.sidebar-menu li p
+{
+    padding: 10px 0 0 0!important;
+    font-size: 14px;
+    font-weight: bold;
+    color: #8B8B8B;
+    text-align: center;
+    font-family: 微软雅黑;
+}
+.active p{
+    color: #139FFD!important;
+}
+.wp-icon .ruku 
+{
+	background: url(../../statics/images/WupinLogo/t7.png) no-repeat 25px;
+}
+.wp-icon .chuku 
+{
+	background: url(../../statics/images/WupinLogo/t8.png) no-repeat 28px;
+}
+.wp-icon .search 
+{
+	background: url(../../statics/images/WupinLogo/t9.png) no-repeat 28px;
+}
+.wp-icon .tongji 
+{
+	background: url(../../statics/images/WupinLogo/t10.png) no-repeat 25px;
+}
+.wp-icon .ajcunru 
+{
+	background: url(../../statics/images/WupinLogo/t1.png) no-repeat 25px;
+}
+.wp-icon .ajquchu 
+{
+	background: url(../../statics/images/WupinLogo/t2.png) no-repeat 25px;
+}
+.wp-icon .ajquchu 
+{
+	background: url(../../statics/images/WupinLogo/t2.png) no-repeat 25px;
+}
+.wp-icon .ajsearch 
+{
+	background: url(../../statics/images/WupinLogo/t3.png) no-repeat 25px;
+}
+.wp-icon .ajtongji 
+{
+	background: url(../../statics/images/WupinLogo/t4.png) no-repeat 25px;
+}
+.wp-icon .ajxianzhuang
+{
+	background: url(../../statics/images/WupinLogo/t5.png) no-repeat 25px;
+}
+.wp-icon .qrcode
+{
+	background: url(../../statics/images/WupinLogo/t6.png) no-repeat 25px;
+}

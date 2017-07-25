@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Clean Blog - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional fonts for this theme -->
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='${rc.contextPath}/statics/fonts/iconfont/iconfont.css' rel='stylesheet' type='text/css'>
+    <!-- Custom styles for this theme -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- Temporary navbar container fix until Bootstrap 4 is patched -->
+    <style>
+    .navbar-toggler {
+        z-index: 1;
+    }
+    
+    @media (max-width: 576px) {
+        nav > .container {
+            width: 100%;
+        }
+    }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-toggleable-md navbar-light" id="mainNav">
+        <div class="container">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll icon" href="http://blog.csdn.net/xzy99" > <i class="iconfont icon-csdn1" style="font-size: large"></i></a>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="../portal/showIndex">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="../portal/showAbout">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="../portal/showContact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="intro-header" style="background-image: url('img/about-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                    <div class="page-heading">
+                        <img src="${rc.contextPath}/img/head.jpg" width="150px" height="150px" style="border-radius:50%">
+                    <!--    <h1>About Me</h1>-->
+                        <span class="subheading">Keep It SImple  , Stupid </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+
+            </div>
+        </div>
+    </div>
+
+    <!--my skill-->
+    <div class="my-skills text-center">
+        <div class="container">
+            <h3>MY SKILLS</h3>
+            <div class="strip text-center"><img src="${rc.contextPath}/img/skill.png" alt=" "/></div>
+            <div class="skill-grids">
+                <div class="col-md-2 skills-grid text-center">
+                    <div class="circle" id="circles-1"></div>
+                    <p>Photoshop</p>
+                </div>
+                <div class="col-md-2 skills-grid text-center">
+                    <div class="circle" id="circles-2"></div>
+                    <p>Illustrator</p>
+                </div>
+                <div class="col-md-2 skills-grid text-center">
+                    <div class="circle" id="circles-3"></div>
+                    <p>Photography</p>
+                </div>
+                <div class="col-md-2 skills-grid text-center">
+                    <div class="circle" id="circles-4"></div>
+                    <p>Html 5 / CSS 3</p>
+                </div>
+                <div class="col-md-2 skills-grid text-center">
+                    <div class="circle" id="circles-5"></div>
+                    <p>C4D</p>
+                </div>
+                <div class="col-md-2 skills-grid text-center">
+                    <div class="circle" id="circles-6"></div>
+                    <p>After Effect</p>
+                </div>
+                <div class="clearfix"> </div>
+
+                <script>
+                    var colors = [
+                        ['#6ed4c0', '#ffffff'], ['#6ed4c0', '#ffffff'], ['#6ed4c0', '#ffffff'], ['#6ed4c0', '#ffffff'], ['#6ed4c0', '#ffffff'], ['#6ed4c0', '#ffffff']
+                    ];
+                    for (var i = 1; i <= 7; i++) {
+                        var child = document.getElementById('circles-' + i),
+                                percentage = 30 + (i * 10);
+
+                        Circles.create({
+                            id:         child.id,
+                            percentage: percentage,
+                            radius:     80,
+                            width:      10,
+                            number:   	percentage / 1,
+                            text:       '%',
+                            colors:     colors[i - 1]
+                        });
+                    }
+
+                </script>
+            </div>
+        </div>
+    </div>
+    <!--//my skill-->
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-qq fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-wechat fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; xustars 2017</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery Version 3.1.1 -->
+    <script src="lib/jquery/jquery.js"></script>
+
+    <!-- Tether -->
+    <script src="lib/tether/tether.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
+
+    <script type="text/javascript" src="js/circles.js"></script>
+
+</body>
+
+</html>

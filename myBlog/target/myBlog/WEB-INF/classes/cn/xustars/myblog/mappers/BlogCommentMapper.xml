@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.xustars.myblog.dao.BlogCommentMapper" >
+  
+  <select id="queryListByBlogId" resultType="cn.xustars.myblog.entity.BlogComment">
+  		select * from blog_comment where blog_id = #{blogId}
+  </select>
+  
+  <select id="queryList" resultType="cn.xustars.myblog.entity.BlogComment">
+  		select * from blog_comment where 1 = 1
+  </select>
+
+  <select id="queryTotal" resultType="int">
+		select count(*) from blog_comment
+  </select>
+
+  <insert id="insert" parameterType="cn.xustars.myblog.entity.BlogComment">
+  		insert into blog_comment values(null,#{blogId},#{comTime},#{state})
+  </insert>
+  
+  <update id="updateById" parameterType="cn.xustars.myblog.entity.BlogComment">
+  		update blog_comment 
+ 		<trim prefix="SET" suffixOverrides=",">
+			<if test="blogId != null">title = #{blogId}, </if>
+			<if test="comTime != null">com_time = #{comTime}, </if>
+			<if test="state != null">state = #{state}, </if>
+	    </trim>
+	    where com_id = #{comId}
+  </update>
+  
+  <delete id="deleteBatch">
+		delete from blog_comment where com_id in
+		<foreach item="comId" collection="array" open="(" separator="," close=")">
+			#{comId}
+		</foreach>
+  </delete>
+  
+  
+</mapper>

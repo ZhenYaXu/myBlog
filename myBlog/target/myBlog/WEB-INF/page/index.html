@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Clean Blog - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="${rc.contextPath}/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${rc.contextPath}/statics/css/bootstrapv3.css" rel="stylesheet">
+    <!-- Additional fonts for this theme -->
+    <link href="${rc.contextPath}/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='${rc.contextPath}/css/font-1.css' rel='stylesheet' type='text/css'>
+    <link href='${rc.contextPath}/css/font-2.css' rel='stylesheet' type='text/css'>
+    <link href='${rc.contextPath}/statics/fonts/iconfont/iconfont.css' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this theme -->
+    <link href="${rc.contextPath}/css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- Temporary navbar container fix until Bootstrap 4 is patched -->
+    <style>
+        .navbar-toggler {
+            z-index: 1;
+        }
+
+        @media (max-width: 576px) {
+            nav > .container {
+                width: 100%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+<div id="myblog" v-cloak>
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-toggleable-md navbar-light" id="mainNav">
+        <div class="container">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll icon" href="http://blog.csdn.net/xzy99" > <i class="iconfont icon-csdn1" style="font-size: large"></i></a>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="../portal/showIndex">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="../portal/showAbout">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="../portal/showContact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                    <div class="site-heading">
+                        <h1></h1>
+                        <span class="subheading">Blog </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                <div class="post-preview" v-for="blog in blogs" style="margin-top: 120px">
+                    <a href="javascript:void(0)" @click="showDetail(blog.blogId)">
+                        <h2 class="post-title">
+                            {{blog.title}}
+                        </h2>
+                        <h3 class="post-subtitle">
+                            {{blog.summary}}
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted by <a href="#">Published</a> on {{blog.createDate | formatDate}}</p>
+                </div>
+                <hr>
+
+                <hr>
+                <!-- Pager -->
+                <div class="clearfix">
+                    <a class="btn btn-secondary float-right" href="#">Older Posts &rarr;</a>
+                </div>
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                    <ul class="list-inline text-center">
+
+                        <li class="list-inline-item">
+                            <ul id='bp-3-element-test' style="cursor:hand;"></ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">
+                            <ul id='bp-3-element-test' style="cursor:hand;"></ul>
+                        </li>
+                    </ul>
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-qq fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-wechat  fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; xustars 2017</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <input type="hidden" id="tmpId" value="">
+</div>
+
+<!-- jQuery Version 3.1.1 -->
+<script src="${rc.contextPath}/lib/jquery/jquery.js"></script>
+
+<!-- Tether -->
+<script src="${rc.contextPath}/lib/tether/tether.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="${rc.contextPath}/lib/bootstrap/js/bootstrap.min.js"></script>
+<!-- Theme JavaScript -->
+<script src="${rc.contextPath}/js/clean-blog.min.js"></script>
+
+<script src="${rc.contextPath}/statics/libs/jquery-1.9.1.min.js"></script>
+<script src="${rc.contextPath}/statics/libs/vue.min.js"></script>
+<script src="${rc.contextPath}/statics/libs/vue-resource.js"></script>
+<script src="${rc.contextPath}/statics/libs/bootstrapv3.js"></script>
+<script src="${rc.contextPath}/statics/libs/bootstrap-paginator.js"></script>
+<script src="${rc.contextPath}/statics/libs/router.js"></script>
+<script src="${rc.contextPath}/statics/libs/fastclick.min.js"></script>
+<script src="${rc.contextPath}/statics/libs/fastclick.min.js"></script>
+<script src="${rc.contextPath}/js/portal/data.js"></script>
+<script src="${rc.contextPath}/js/portal/index.js"></script>
+<script>
+
+</script>
+</body>
+
+</html>
