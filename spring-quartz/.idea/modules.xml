@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$USER_HOME$/Desktop/java就业项目-博客系统V3.0/Blog/Blog.iml" filepath="$USER_HOME$/Desktop/java就业项目-博客系统V3.0/Blog/Blog.iml" />
+      <module fileurl="file://$USER_HOME$/Desktop/myBlog/myBlog.iml" filepath="$USER_HOME$/Desktop/myBlog/myBlog.iml" />
+      <module fileurl="file://$USER_HOME$/Desktop/myBlog-portal-web/myBlog-portal-web.iml" filepath="$USER_HOME$/Desktop/myBlog-portal-web/myBlog-portal-web.iml" />
+      <module fileurl="file://$USER_HOME$/Desktop/angularJS/myproject.iml" filepath="$USER_HOME$/Desktop/angularJS/myproject.iml" />
+      <module fileurl="file://$USER_HOME$/Desktop/java/quartzWithSpring/quartzWithSpring.iml" filepath="$USER_HOME$/Desktop/java/quartzWithSpring/quartzWithSpring.iml" />
+      <module fileurl="file://D:/myeclipse 2017 workspace/spring-boot/spring-boot.iml" filepath="D:/myeclipse 2017 workspace/spring-boot/spring-boot.iml" />
+      <module fileurl="file://D:/myeclipse 2017 workspace/springboot-1/springboot-1.iml" filepath="D:/myeclipse 2017 workspace/springboot-1/springboot-1.iml" />
+      <module fileurl="file://D:/myeclipse 2017 workspace/springboot-security/springboot-security.iml" filepath="D:/myeclipse 2017 workspace/springboot-security/springboot-security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sssp.iml" filepath="$PROJECT_DIR$/sssp.iml" />
+      <module fileurl="file://$USER_HOME$/Desktop/zhzf/zq.iml" filepath="$USER_HOME$/Desktop/zhzf/zq.iml" />
+    </modules>
+  </component>
+</project>
