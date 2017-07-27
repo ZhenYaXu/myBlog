@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="zq:war">
-    <output-path>$USER_HOME$/Desktop/zhzf/target</output-path>
-    <root id="archive" name="zhzf.war">
-      <element id="artifact" artifact-name="zq:war exploded" />
-    </root>
-  </artifact>
-</component>

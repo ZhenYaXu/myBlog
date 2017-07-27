@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="Blog:war">
-    <output-path>$USER_HOME$/Desktop/java就业项目-博客系统V3.0/Blog/target</output-path>
-    <root id="archive" name="Blog.war">
-      <element id="artifact" artifact-name="Blog:war exploded" />
-    </root>
-  </artifact>
-</component>

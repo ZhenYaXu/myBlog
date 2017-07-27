@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="sssp:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="sssp.war">
-      <element id="artifact" artifact-name="sssp:war exploded" />
-    </root>
-  </artifact>
-</component>
